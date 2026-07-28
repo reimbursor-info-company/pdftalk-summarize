@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdftalk-summarize"
+version = "0.1.0"
+description = "Offline extractive text summarization, with optional PDF-to-audio integration for pdftalk"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Reimbursor company" }]
+keywords = ["pdf", "summarization", "text-rank", "accessibility", "pdftalk"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+    "Intended Audience :: Developers",
+]
+dependencies = []
+
+[project.optional-dependencies]
+pdf = ["pdftalk>=0.2.7"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+pdftalk-summarize = "pdftalk_summarize.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/reimbursor-info-company/pdftalk-summarize"
+
+[tool.setuptools.packages.find]
+where = ["src"]
